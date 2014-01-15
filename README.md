@@ -15,11 +15,10 @@ zk.sync.Executor 客户端同步进程
 将 Executor、DataMonitor、Constant、ConfFileUtil 打包为 confsync.jar
 放到所有需要同步更新配置的节点
 
-├─confsync.jar
 
-├─── lib ───┬─slf4j-api-1.6.1.jar
-
-│            ├─zookeeper-3.4.5.jar
+|--confsync.jar
+|------lib------|-slf4j-api-1.6.1.jar
+|               |-zookeeper-3.4.5.jar
 
 运行 Executor：
  java -classpath ".:confsync.jar:lib/*" zk.sync.Executor
