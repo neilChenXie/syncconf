@@ -20,7 +20,7 @@ zk.sync.Executor 客户端同步进程
 
 |------lib------|-slf4j-api-1.6.1.jar
 
-|               |-zookeeper-3.4.5.jar
+|---------------|-zookeeper-3.4.5.jar
 
 运行 Executor：
  java -classpath ".:confsync.jar:lib/*" zk.sync.Executor
