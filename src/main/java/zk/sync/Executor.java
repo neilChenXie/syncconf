@@ -49,7 +49,7 @@ public class Executor implements Watcher, Runnable,
 	public void run() {
 		try {
 			synchronized (this) {
-				while (!dm.dead) {// znode 没死就一直 wait,如果死了，就退出
+				while (!dm.dead) {
 					wait();
 				}
 			}
@@ -57,8 +57,6 @@ public class Executor implements Watcher, Runnable,
 		}
 	}
 
-	// session 关闭触发此方法,此方法退出后
-	// 当前线程从 wait 中退出，检查 DataMonitor 是否还有效
 	public void closing(int rc) {
 		synchronized (this) {
 			notifyAll();
